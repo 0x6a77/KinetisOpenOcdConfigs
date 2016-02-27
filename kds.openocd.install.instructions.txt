@@ -1,0 +1,19 @@
+Getting OpenOCD to work with OSX
+
+Install KDS and Processor Expert (with updates) per Freescale docs.
+Install GNU ARM OpenOCD per Freescale
+Install MCU On Eclipse PE extensions.
+Update KDS via Eclipse update mechanism.
+Install GNU ARM OpenOCD (0.9.0) from original web source (update site)
+
+As of 09SEP15:
+----------------------------------
+Fix the the following libraries:
+
+replace this -> ilg.gnuarmeclipse.debug.gdbjtag_2.1.3.201503181632.jar
+with a renamed version of this --> ilg.gnuarmeclipse.debug.gdbjtag_2.2.1.201508190739.jar
+
+The reason for this is that Freescale support for Kinetis only exists (as of this time) in a "special" OpenOCD 0.8.0 unpatched back to the GNU ARM Eclipse project.
+We really need to run OpenOCD 0.9.0, but the KDS installer won't fully let us do that because of weird internal dependencies.
+Hopefully, Freescale will get the KDS-installed OpenOCD to match the one from the real GNU ARM Eclipse project.
+----------------------------------
